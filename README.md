@@ -52,12 +52,16 @@ From another system, visit:
 
 http://192.168.1.105:9001
 
-Download the mc client-Invoke- WebRequest https://dl.min.io/client/mc/release/windows-amd64/mc.exe -OutFile mc.exe
+#Download and set up nodes
+mc client-Invoke- WebRequest https://dl.min.io/client/mc/release/windows-amd64/mc.exe -OutFile mc.exe
 
 Or use the MinIO Client:
 
 mc alias set myminio http://192.168.1.105:9000 admin password123
 mc cp ./example.txt myminio/mybucket
+move it to your venv for not disturbing the global python command-mv mc.exe ./venv/Scripts/
+and then set up the permission for mc client
+mc alias set myminio http://localhost:9000 minioadmin minioadmin
 
 ## 🧩 Folder Structure
 
